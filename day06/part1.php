@@ -6,8 +6,7 @@ list(, $dist) = explode(':', $inputs[1], 2);
 
 $times = preg_split('/\s+/', trim($time));
 $dists = preg_split('/\s+/', trim($dist));
-print_r($times);
-print_r($dists);
+print_r(["times"=>$times, "dists"=>$dists]);
 
 ### Exemple :
 ###   temps max = 10ms

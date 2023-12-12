@@ -15,8 +15,7 @@ function calc($str) {
 
 $sum = 0;
 foreach ($inputs as $line) {
-	if (! preg_match('/^Game (\d+): (.*)$/', $line, $m)) die($line);
-	list(, $id, $data) = $m;
-	$sum+= calc($data);
+	if (! preg_match('/^Game \d+: (.*)$/', $line, $m)) die($line);
+	$sum+= calc($m[1]);
 }
 printf("SUM=%d\n", $sum);

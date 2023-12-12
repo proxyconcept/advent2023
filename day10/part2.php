@@ -125,15 +125,17 @@ check() || check(true);
 printf("\n>>> IN=%d / OUT=%d\n", count($res_in), count($res_out));
 
 // Génération de la carte résolue (coloration des cases selon leur état path/in/out)
+
 $fp = fopen("output.txt", 'w');
 foreach ($inputs as $y => $line) {
 	$out = '';
 	foreach (str_split($line) as $x => $tile) {
+		$pipe = str_replace(['L','|','F','-','7','J'], ['╚','║','╔','═','╗','╝'], $tile);
 		$key = $x.':'.$y;
-		if     (isset($res_out[$key])) $out.= "\033[1;41m" . $tile . "\033[0;00m";
-		elseif (isset($res_in[$key]))  $out.= "\033[1;42m" . $tile . "\033[0;00m";
-		elseif (isset($path[$key]))    $out.= "\033[1;33m" . $tile . "\033[0;00m";
-		else                           $out.= "\033[1;31m" . $tile . "\033[0;00m";
+		if     (isset($res_out[$key])) $out.= "\033[1;41m" . $pipe . "\033[0;00m";
+		elseif (isset($res_in[$key]))  $out.= "\033[1;42m" . $pipe . "\033[0;00m";
+		elseif (isset($path[$key]))    $out.= "\033[1;33m" . $pipe . "\033[0;00m";
+		else                           $out.= "\033[1;31m" . $pipe . "\033[0;00m";
 	}
 	fwrite($fp, $out."\n");
 }

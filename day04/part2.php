@@ -1,15 +1,11 @@
 <?php
 $inputs = file('input.txt');
 
-
 function count_matchs($win, $our) {
 	$nb = 0;
-	foreach ($our as $n) {
-		if (in_array($n, $win)) $nb++;
-	}
+	foreach ($our as $n) if (in_array($n, $win)) $nb++;
 	return $nb;
 }
-
 
 $sum = 0;
 $qty = array();

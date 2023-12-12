@@ -47,11 +47,10 @@ foreach ($inputs as $line) {
 	}
 	$idx++;
 }
-var_dump($gears);
+print_r($gears);
 
 $sum = 0;
 foreach ($gears as $numbers) {
-	if (count($numbers) != 2) continue;
-	$sum+= $numbers[0] * $numbers[1];
+	if (count($numbers) == 2) $sum+= $numbers[0] * $numbers[1];
 }
 printf("SUM=%d\n", $sum);

@@ -19,7 +19,6 @@ function is_ok($str) {
 $sum = 0;
 foreach ($inputs as $line) {
 	if (! preg_match('/^Game (\d+): (.*)$/', $line, $m)) die($line);
-	list(, $id, $data) = $m;
-	if (is_ok($data)) $sum+= $id;
+	if (is_ok($m[2])) $sum+= $m[1];
 }
 printf("SUM=%d\n", $sum);

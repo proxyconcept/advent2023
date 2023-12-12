@@ -6,7 +6,7 @@ list(, $dist) = explode(':', $inputs[1], 2);
 
 $max_time = preg_replace('/[^\d]/', '', $time);
 $min_dist = preg_replace('/[^\d]/', '', $dist);
-var_dump($max_time, $min_dist);
+print_r(["max_time"=>$max_time, "min_dist"=>$min_dist]);
 
 ### Exemple :
 ###   temps max = 10ms
@@ -15,9 +15,10 @@ var_dump($max_time, $min_dist);
 ###   - 5ms load / 5ms move (@ 5mm/ms) => 25mm
 ###   - 8ms load / 2ms move (@ 8mm/ms) => 16mm
 
+// Calcul la distance parcourue pour chaque durée de chargement possible
 $nb=0;
-for ($load = 1; $load < $max_time; $load ++) {
-	// temps restant * vitesse
+for ($load = 1; $load < $max_time; $load++) {
+	// distance = temps restant * vitesse
 	if (($max_time - $load) * $load > $min_dist) $nb++;
 }
 printf("\nRes=%d\n\n", $nb);
