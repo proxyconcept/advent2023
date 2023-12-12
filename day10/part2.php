@@ -126,17 +126,19 @@ printf("\n>>> IN=%d / OUT=%d\n", count($res_in), count($res_out));
 
 // Génération de la carte résolue (coloration des cases selon leur état path/in/out)
 
-$fp = fopen("output.txt", 'w');
+$fp = fopen("output.log", 'w');
+$fp2 = fopen("output.txt", 'w');
 foreach ($inputs as $y => $line) {
-	$out = '';
+	$out = $out2 = '';
 	foreach (str_split($line) as $x => $tile) {
 		$pipe = str_replace(['L','|','F','-','7','J'], ['╚','║','╔','═','╗','╝'], $tile);
 		$key = $x.':'.$y;
-		if     (isset($res_out[$key])) $out.= "\033[1;41m" . $pipe . "\033[0;00m";
-		elseif (isset($res_in[$key]))  $out.= "\033[1;42m" . $pipe . "\033[0;00m";
-		elseif (isset($path[$key]))    $out.= "\033[1;33m" . $pipe . "\033[0;00m";
-		else                           $out.= "\033[1;31m" . $pipe . "\033[0;00m";
+		if     (isset($res_out[$key])) { $out.= "\033[1;41m" . $pipe . "\033[0;00m"; $out2.= 'O'; }
+		elseif (isset($res_in[$key]))  { $out.= "\033[1;42m" . $pipe . "\033[0;00m"; $out2.= 'I'; }
+		elseif (isset($path[$key]))    { $out.= "\033[1;33m" . $pipe . "\033[0;00m"; $out2.= $pipe; }
+		else                           { $out.= "\033[1;31m" . $pipe . "\033[0;00m"; $out2.= 'o'; }
 	}
 	fwrite($fp, $out."\n");
+	fwrite($fp2, $out2."\n");
 }
-printf("\n>>> See result map : 'cat output.txt'\n");
+printf("\n>>> See result maps : 'cat output.txt' and 'cat output.log'\n");
