@@ -1,0 +1,1 @@
+<?php $i=file('input.txt'); $w=strlen($i[0]); $h=count($i); for($s=$x=0;$x<$w;$x++) for($p=$y=0;$y<$h;$y++) if($i[$y][$x]=='O') $s+=$h-$p++; elseif($i[$y][$x]=='#') $p=$y+1; echo($s);
