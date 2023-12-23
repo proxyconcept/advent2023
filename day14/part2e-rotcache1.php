@@ -15,13 +15,13 @@ for ($c = 0; $c < $nbcycles; $c++) for ($i = 0; $i < 4; $i++) {
 	$new = array();
 	for ($x = 0; $x < $width; $x++) {
 		$key = implode('', array_column($tiles, $x));
-		if (isset($tcache[$key])) { $new[] = $tcache[$key]; continue; }
+		if (array_key_exists($key, $tcache)) { $new[] = $tcache[$key]; continue; }
 		
 		$row = array();
 		for ($pos = $y = 0; $y < $height; $y++) {
-			if     ($tiles[$y][$x] == '#') { $row[] = '#'; $pos = $y + 1; }
+			if     ($tiles[$y][$x] == '.') $row[] = '.';
 			elseif ($tiles[$y][$x] == 'O') { $row[] = '.'; $row[$pos++] = 'O'; }
-			else   $row[] = '.';
+			else                           { $row[] = '#'; $pos = $y + 1; }
 		}
 		$new[] = $tcache[$key] = array_reverse($row);
 	}

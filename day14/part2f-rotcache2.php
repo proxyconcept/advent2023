@@ -3,7 +3,7 @@ $inputs = file('input.txt', FILE_IGNORE_NEW_LINES);
 
 $nbcycles = 1000000000;
 $nbcycles = 1000000;
-$nbcycles = 100000;
+$nbcycles = 10000;
 
 $tiles = array(); foreach ($inputs as $line) $tiles[] = str_split($line);
 $x_max = strlen($inputs[0]) - 1;
@@ -16,12 +16,13 @@ for ($c = 0; $c < $nbcycles; $c++) for ($i = 0; $i < 4; $i++) {
 	$new = array();
 	for ($x = 0; $x <= $x_max; $x++) {
 		$key = implode('', array_column($tiles, $x));
-		if (isset($tcache[$key])) { $new[] = $tcache[$key]; continue; }
+		if (array_key_exists($key, $tcache)) { $new[] = $tcache[$key]; continue; }
 		
 		$row = $tpl;
 		for ($pos = $y = 0; $y <= $y_max; $y++) {
-			if     ($tiles[$y][$x] == '#') { $row[$y_max - $y] = '#'; $pos = $y + 1; }
-			elseif ($tiles[$y][$x] == 'O') { $row[$y_max - $y] = '.'; $row[$y_max - $pos++] = 'O'; }
+			if     ($tiles[$y][$x] === '.') continue;
+			elseif ($tiles[$y][$x] === 'O') { $row[$y_max - $y] = '.'; $row[$y_max - $pos++] = 'O'; }
+			else                            { $row[$y_max - $y] = '#'; $pos = $y + 1; }
 		}
 		$new[] = $tcache[$key] = $row;
 	}
@@ -31,8 +32,8 @@ for ($c = 0; $c < $nbcycles; $c++) for ($i = 0; $i < 4; $i++) {
 // Additionne les poids au nord en traitant colonne par colonne...
 for ($sum = $x = 0; $x <= $x_max; $x++) {
 	for ($pos = $y = 0; $y <= $y_max; $y++) {
-		if     ($tiles[$y][$x] == 'O') $sum+= $y_max + 1 - $pos++;
-		elseif ($tiles[$y][$x] == '#') $pos = $y + 1;
+		if     ($tiles[$y][$x] === 'O') $sum+= $y_max + 1 - $pos++;
+		elseif ($tiles[$y][$x] === '#') $pos = $y + 1;
 	}
 }
 printf("\nSum=%d\n\n", $sum);
