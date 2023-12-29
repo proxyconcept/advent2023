@@ -1,5 +1,5 @@
 <?php
-$inputs = file('input0.txt', FILE_IGNORE_NEW_LINES);
+$inputs = file('input.txt', FILE_IGNORE_NEW_LINES);
 
 /**
  * Modules types:

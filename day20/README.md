@@ -140,3 +140,4 @@ The final machine responsible for moving the sand down to Island Island has a mo
 
 Reset all modules to their default states. Waiting for all pulses to be fully handled after each button press, _what is the fewest number of button presses required to deliver a single low pulse to the module named `rx`?_
 
+Your puzzle answer was `244178746156661`.
