@@ -75,3 +75,42 @@ This hike contains `_94_` steps. (The other possible hikes you could have taken 
 Find the longest hike you can take through the hiking trails listed on your map. _How many steps long is the longest hike?_
 
 Your puzzle answer was `2186`.
+
+\--- Part Two ---
+-----------------
+
+As you reach the trailhead, you realize that the ground isn't as slippery as you expected; you'll have _no problem_ climbing up the steep slopes.
+
+Now, treat all _slopes_ as if they were normal _paths_ (`.`). You still want to make sure you have the most scenic hike possible, so continue to ensure that you _never step onto the same tile twice_. What is the longest hike you can take?
+
+In the example above, this increases the longest hike to `_154_` steps:
+
+```
+#S#####################
+#OOOOOOO#########OOO###
+#######O#########O#O###
+###OOOOO#.&gt;OOO###O#O###
+###O#####.#O#O###O#O###
+###O&gt;...#.#O#OOOOO#OOO#
+###O###.#.#O#########O#
+###OOO#.#.#OOOOOOO#OOO#
+#####O#.#.#######O#O###
+#OOOOO#.#.#OOOOOOO#OOO#
+#O#####.#.#O#########O#
+#O#OOO#...#OOO###...&gt;O#
+#O#O#O#######O###.###O#
+#OOO#O&gt;.#...&gt;O&gt;.#.###O#
+#####O#.#.###O#.#.###O#
+#OOOOO#...#OOO#.#.#OOO#
+#O#########O###.#.#O###
+#OOO###OOO#OOO#...#O###
+###O###O#O###O#####O###
+#OOO#OOO#O#OOO&gt;.#.&gt;O###
+#O###O###O#O###.#.#O###
+#OOOOO###OOO###...#OOO#
+#####################O#
+```
+
+Find the longest hike you can take through the surprisingly dry hiking trails listed on your map. _How many steps long is the longest hike?_
+
+Your puzzle answer was `6802`.
