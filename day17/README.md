@@ -41,19 +41,19 @@ Because it is difficult to keep the top-heavy crucible going in a straight line 
 One way to _minimize heat loss_ is this path:
 
 ```
-2<em>&gt;</em><em>&gt;</em>34<em>^</em><em>&gt;</em><em>&gt;</em><em>&gt;</em>1323
-32<em>v</em><em>&gt;</em><em>&gt;</em><em>&gt;</em>35<em>v</em>5623
-32552456<em>v</em><em>&gt;</em><em>&gt;</em>54
+2<em>></em><em>></em>34<em>^</em><em>></em><em>></em><em>></em>1323
+32<em>v</em><em>></em><em>></em><em>></em>35<em>v</em>5623
+32552456<em>v</em><em>></em><em>></em>54
 3446585845<em>v</em>52
-4546657867<em>v</em><em>&gt;</em>6
+4546657867<em>v</em><em>></em>6
 14385987984<em>v</em>4
 44578769877<em>v</em>6
-36378779796<em>v</em><em>&gt;</em>
+36378779796<em>v</em><em>></em>
 465496798688<em>v</em>
 456467998645<em>v</em>
-12246868655<em>&lt;</em><em>v</em>
+12246868655<em><</em><em>v</em>
 25465488877<em>v</em>5
-43226746555<em>v</em><em>&gt;</em>
+43226746555<em>v</em><em>></em>
 ```
 
 This path never moves more than three consecutive blocks in the same direction and incurs a heat loss of only `_102_`.

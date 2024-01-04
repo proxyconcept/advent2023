@@ -39,13 +39,13 @@ Because the snapshot was taken while the bricks were still falling, some bricks 
 Here is the same example again, this time with each brick given a letter so it can be marked in diagrams:
 
 ```
-1,0,1~1,2,1   &lt;- A
-0,0,2~2,0,2   &lt;- B
-0,2,3~2,2,3   &lt;- C
-0,0,4~0,2,4   &lt;- D
-2,0,5~2,2,5   &lt;- E
-0,1,6~2,1,6   &lt;- F
-1,1,8~1,1,9   &lt;- G
+1,0,1~1,2,1   <- A
+0,0,2~2,0,2   <- B
+0,2,3~2,2,3   <- C
+0,0,4~0,2,4   <- D
+2,0,5~2,2,5   <- E
+0,1,6~2,1,6   <- F
+1,1,8~1,1,9   <- G
 ```
 
 At the time of the snapshot, from the side so the `x` axis goes left to right, these bricks are arranged like this:

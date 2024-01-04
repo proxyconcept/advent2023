@@ -39,15 +39,15 @@ Beams do not interact with other beams; a tile can have many beams passing throu
 In the above example, here is how the beam of light bounces around the contraption:
 
 ```
-&gt;|&lt;&lt;&lt;\....
+>|<<<\....
 |v-.\^....
-.v...|-&gt;&gt;&gt;
+.v...|->>>
 .v...v^.|.
 .v...v^...
 .v...v^..\
 .v../2\\..
-&lt;-&gt;-/vv|..
-.|&lt;&lt;&lt;2-|.\
+<->-/vv|..
+.|<<<2-|.\
 .v//.|.v..
 ```
 
@@ -82,15 +82,15 @@ So, the beam could start on any tile in the top row (heading downward), any tile
 In the above example, this can be achieved by starting the beam in the fourth tile from the left in the top row:
 
 ```
-.|&lt;2&lt;\....
+.|<2<\....
 |v-v\^....
-.v.v.|-&gt;&gt;&gt;
+.v.v.|->>>
 .v.v.v^.|.
 .v.v.v^...
 .v.v.v^..\
 .v.v/2\\..
-&lt;-2-/vv|..
-.|&lt;&lt;&lt;2-|.\
+<-2-/vv|..
+.|<<<2-|.\
 .v//.|.v..
 ```
 

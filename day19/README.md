@@ -29,17 +29,17 @@ If a part is sent to another workflow, it immediately switches to the start of t
 The system works, but it's not keeping up with the torrent of weird metal shapes. The Elves ask if you can help sort a few parts and give you the list of workflows and some part ratings (your puzzle input). For example:
 
 ```
-px{a&lt;2006:qkq,m&gt;2090:A,rfg}
-pv{a&gt;1716:R,A}
-lnx{m&gt;1548:A,A}
-rfg{s&lt;537:gd,x&gt;2440:R,A}
-qs{s&gt;3448:A,lnx}
-qkq{x&lt;1416:A,crn}
-crn{x&gt;2662:A,R}
-in{s&lt;1351:px,qqz}
-qqz{s&gt;2770:qs,m&lt;1801:hdj,R}
-gd{a&gt;3333:R,R}
-hdj{m&gt;838:A,pv}
+px{a<2006:qkq,m>2090:A,rfg}
+pv{a>1716:R,A}
+lnx{m>1548:A,A}
+rfg{s<537:gd,x>2440:R,A}
+qs{s>3448:A,lnx}
+qkq{x<1416:A,crn}
+crn{x>2662:A,R}
+in{s<1351:px,qqz}
+qqz{s>2770:qs,m<1801:hdj,R}
+gd{a>3333:R,R}
+hdj{m>838:A,pv}
 
 {x=787,m=2655,a=1222,s=2876}
 {x=1679,m=44,a=2067,s=496}
